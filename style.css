@@ -8,34 +8,10 @@
 
 .home .background {
   position: absolute;
-  top: -578px;
-  left: -402px;
-  width: 2679px;
-  height: 2192px;
-}
-
-.home .BG {
-  position: absolute;
-  top: 578px;
-  left: 402px;
-  width: 1920px;
-  height: 1127px;
-}
-
-.home .vector {
-  position: absolute;
-  top: -300px;
-  left: 1479px;
-  width: 1500px;
-  height: 1470px;
-}
-
-.home .img {
-  position: absolute;
-  top: 1022px;
-  left: -300px;
-  width: 1500px;
-  height: 1470px;
+  top: -878px;
+  left: -702px;
+  width: 3279px;
+  height: 2792px;
 }
 
 .home .profile-picture {
@@ -157,8 +133,6 @@
   left: 608px;
   width: 20px;
   height: 20px;
-  background-color: #dedede;
-  border-radius: 10px;
 }
 
 .home .hello-i-m-ralph {
@@ -279,7 +253,7 @@
   height: 1316px;
 }
 
-.home .vector-2 {
+.home .element-lines {
   position: absolute;
   top: -2px;
   left: -2px;
@@ -287,15 +261,7 @@
   height: 1321px;
 }
 
-.home .vector-3 {
-  position: absolute;
-  top: 521px;
-  left: 1174px;
-  width: 55px;
-  height: 114px;
-}
-
-.home .vector-4 {
+.home .element-dots {
   position: absolute;
   top: 513px;
   left: 1167px;
