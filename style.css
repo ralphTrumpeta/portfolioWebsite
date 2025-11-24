@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.home .background {
+.home .BG {
   position: absolute;
   top: -878px;
   left: -702px;
@@ -253,7 +253,7 @@
   height: 1316px;
 }
 
-.home .element-lines {
+.home .elementLines {
   position: absolute;
   top: -2px;
   left: -2px;
@@ -261,7 +261,7 @@
   height: 1321px;
 }
 
-.home .element-dots {
+.home .elementDots {
   position: absolute;
   top: 513px;
   left: 1167px;

@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Dennis Sans", sans-serif;
+    line-height: 1.6;
+    font-weight: 450;
+    font-style: normal;
+    font-size: clamp(16px, 23px, 19px);
+}
+
+/* Navbar styles */
+.navbar {
+    position: relative;
+    top: 30px;
+    left: 0px;
+    width: 100%;
+    z-index: 5;
+    transform: translate(0px, 0px) rotate(0.001deg);
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+/* Moves items to the right */
+.links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+/* Home button stays on the left */
+.home-topleft-btn {
+    margin-right: auto; 
+    margin-left: 50px;
+}
+
+/* Style for About, Contact, and Project buttons */
+.about-btn, .contact-btn, .project-btn {
+    display: flex;
+}
+
+.about-btn a, .contact-btn a, .project-btn a {
+    display: flex;
+    color: rgb(0, 0, 0);
+    margin-right: 50px; 
+    margin-left: auto;
+    position: relative;
+    padding: 14px 10px;
+    text-decoration: none;
+}
+
+/* Home button styling */
+.home-topleft-btn a {
+    display: flex;
+    color: rgb(0, 0, 0);
+    position: relative;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.about-btn a:hover, .contact-btn a:hover, .project-btn a:hover {
+    background-color: #34495e;
+}
+
+.btn-text {
+    display: inline-block;
+}
+
+.btn-text-inner {
+    display: inline-block;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .links {
+        flex-direction: wrap; 
+        justify-content: center; 
+    }
+    
+    .home-topleft-btn {
+        margin-right: 0;
+        margin-left: 0;
+        width: 100%; 
+        text-align: center; 
+    }
+    
+    .about-btn, .contact-btn, .project-btn {
+        width: 100%; 
+        justify-content: center; 
+    }
+}
