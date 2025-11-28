@@ -3,44 +3,64 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
 }
 
 body {
+    width: 100%;
     line-height: 1.6;
-    font-weight: 450;
-    font-style: normal;
     font-size: clamp(16px, 23px, 19px);
 }
 
-h1, h2, h3, h4, h5, h6, p, a, li, ul, span {
-    padding: 0;
-    margin: 0;
-    font-style: normal;
-    font-weight: 450;
-    letter-spacing: normal;
+h1, h2, h3, h4, h5, h6, p, a {
+    color: white;
 }
 
 /* Navbar styles */
 .navbar {
     position: relative;
-    top: 30px;
+    top: 0px;
     left: 0px;
     width: 100%;
     z-index: 5;
-    transform: translate(0px, 0px) rotate(0.001deg);
-    justify-content: space-between;
-    align-items: center;
     background: transparent;
 }
 
 /* Moves items to the right */
-.links {
+ul.links {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 10px;
     display: flex;
     justify-content: flex-end; 
     align-items: center;
+}
+
+.links li {
+    position: relative;
+}
+
+.links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; /* Position below the text */
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.links a:hover::after {
+    transform: translateX(-50%) scale(1);
 }
 
 /* Home button stays on the left */
@@ -49,69 +69,79 @@ h1, h2, h3, h4, h5, h6, p, a, li, ul, span {
     margin-left: 50px;
 }
 
-/* Style for About, Contact, and Project buttons */
-.about-btn, .contact-btn, .project-btn {
+.about-btn a, .contact-btn a, .project-btn a, .home-topleft-btn a {
     display: flex;
-}
-
-.about-btn a, .contact-btn a, .project-btn a {
-    display: flex;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin-right: 50px; 
     margin-left: auto;
     position: relative;
     padding: 14px 10px;
-    font-size: 24px;
     text-decoration: none;
+    transition: all 0.3s ease; 
+}
+
+/* Add dot effect on hover */
+.about-btn a::after, .contact-btn a::after, .project-btn a::after {
+    position: absolute;
+    bottom: 100px; 
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Dot appearance on hover */
+.about-btn a:hover::after, .contact-btn a:hover::after, .project-btn a:hover::after {
+    transform: translateX(-50%) scale(1);
 }
 
 /* Home button styling */
 .home-topleft-btn a {
-    display: flex;
-    color: rgb(0, 0, 0);
     position: relative;
+    display: flex;
+    color: rgb(255, 255, 255);
     padding: 14px 16px;
-    font-size: 24px;
     text-decoration: none;
 }
 
-.btn-text {
-    display: inline-block;
-}
-
-.btn-text-inner {
-    display: inline-block;
-}
-
 .home-section {
-
-    background-color: #191932
+    position: absolute;
+    width: 100%;
+    height: 100vh;   
+    background: #251f27;
+    top: 0;
+    left: 0;
 }
+
 /* brief description styling*/
 .home-briefdescription {
-    position: fixed;
-    top: 180px;
-    left: 190px;
+    position: relative;
+    top: 100px;
+    left: 180px;
     width: 600px;
     height: 490px;
-    padding: 50px;
 }
 
 .hello-message {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 82px;
     letter-spacing: 0;
-    line-height: normal;
-    color: rgb(0, 0, 0);
+    line-height: 120%;
+    color: rgb(255, 255, 255);
     margin: 20px auto; 
+    display: inline-block;
 }
 
 .element-line {
     height: 5px; 
-    background-color: #000000; 
+    background-color: #DEDEDE; 
     width: 100%; 
     margin: 20px auto; 
     border-radius: 5px; 
+    display: inline-block;
 }
 
 .briefdescription {
@@ -119,31 +149,58 @@ h1, h2, h3, h4, h5, h6, p, a, li, ul, span {
     letter-spacing: 8%;
     line-height: 35px;
     margin: 20px auto; 
+    display: inline-block;
 }
 
 .box-outline-img {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 505x;
+    position: absolute; 
+    top: 230px;
+    right: 200px; 
+    width: 400px; 
+    height: 700px;
+    display: inline-block;
 }
 
-/* for responsive design */
-@media (max-width: 768px) {
-    .links {
-        flex-direction: wrap; 
-        justify-content: center; 
-    }
+.element-diagonal-lines {
+    position: fixed;
+    top: -100px;
+    right: -100px; 
+    width: 1291px;
+    height: 1127px;
     
-    .home-topleft-btn {
-        margin-right: 0;
-        margin-left: 0;
-        width: 100%; 
-        text-align: center; 
-    }
-    
-    .about-btn, .contact-btn, .project-btn {
-        width: 100%; 
-        justify-content: center; 
-    }
+
+}
+
+.element-multidots {
+    position: fixed;
+    width: 45px;
+    height: 95px;  
+    top: 300px;
+    right: 70px; 
+}
+
+.home-buttons {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    list-style-type: none;
+}
+
+a.contact-btn, a.project-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.contact-btn:hover, a.project-btn:hover {
+    background: white;
+    color: black;
 }
