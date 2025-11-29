@@ -27,6 +27,36 @@ h1, h2, h3, h4, h5, h6, p, a {
     background: transparent;
 }
 
+/* dot hover animation */
+
+.about-btn a, .contact-btn a, .project-btn a {
+    position: relative;
+}
+
+.about-btn a::after, .contact-btn a::after, .project-btn a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px; /* adjust vertical position under text */
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0.1);
+    opacity: 0;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.about-btn a:hover::after, .contact-btn a:hover::after, .project-btn a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+.about-btn.active a::after, .contact-btn.active a::after, .project-btn.active a::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
 /* Moves items to the right */
 ul.links {
     list-style-type: none;
@@ -35,32 +65,6 @@ ul.links {
     display: flex;
     justify-content: flex-end; 
     align-items: center;
-}
-
-.links li {
-    position: relative;
-}
-
-.links a {
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.links a::after {
-    content: '';
-    position: absolute;
-    bottom: -8px; /* Position below the text */
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    width: 6px;
-    height: 6px;
-    background-color: white;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-.links a:hover::after {
-    transform: translateX(-50%) scale(1);
 }
 
 /* Home button stays on the left */
@@ -76,34 +80,6 @@ ul.links {
     margin-left: auto;
     position: relative;
     padding: 14px 10px;
-    text-decoration: none;
-    transition: all 0.3s ease; 
-}
-
-/* Add dot effect on hover */
-.about-btn a::after, .contact-btn a::after, .project-btn a::after {
-    position: absolute;
-    bottom: 100px; 
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    width: 6px;
-    height: 6px;
-    background-color: white;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-/* Dot appearance on hover */
-.about-btn a:hover::after, .contact-btn a:hover::after, .project-btn a:hover::after {
-    transform: translateX(-50%) scale(1);
-}
-
-/* Home button styling */
-.home-topleft-btn a {
-    position: relative;
-    display: flex;
-    color: rgb(255, 255, 255);
-    padding: 14px 16px;
     text-decoration: none;
 }
 
@@ -186,13 +162,13 @@ ul.links {
     list-style-type: none;
 }
 
-a.contact-btn, a.project-btn {
+a.contact-homebtn, a.project-homebtn {
     display: inline-block;
     padding: 12px 30px;
     background: transparent;
     color: white;
     border: 2px solid white;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 18px;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -200,7 +176,8 @@ a.contact-btn, a.project-btn {
     text-decoration: none;
 }
 
-a.contact-btn:hover, a.project-btn:hover {
+.contact-homebtn:hover, .project-homebtn:hover {
     background: white;
     color: black;
 }
+
