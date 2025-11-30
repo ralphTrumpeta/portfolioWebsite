@@ -1,22 +1,9 @@
-setTimeout(() => {
-    document.querySelector('.intro').style.opacity = "0";
-
-    setTimeout(() => {
-        document.querySelector('.intro').style.display = "none";
-    }, 1000);
-
-}, 1500);
-
-window.addEventListener("DOMContentLoaded", () => {
-    const introText = document.querySelector(".intro-header-inner");
-    introText.classList.add("active");
-});
-
 window.addEventListener("DOMContentLoaded", () => {
     const introText = document.getElementById("intro-text");
     const intro = document.querySelector('.intro');
     const hasVisited = localStorage.getItem("visited");
 
+    // Set the text content
     if (hasVisited) {
         introText.textContent = "Home."; 
     } else {
@@ -24,16 +11,18 @@ window.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("visited", "true"); 
     }
 
+    // Show the text
     setTimeout(() => {
         introText.classList.add("active");
     }, 300);
 
+    // Hide the entire intro section
     setTimeout(() => {
         intro.style.opacity = "0";
+        intro.style.transition = "opacity 1s ease"; // Ensure smooth fade
 
         setTimeout(() => {
             intro.style.display = "none";
         }, 1000);
-
     }, 1500);
 });
