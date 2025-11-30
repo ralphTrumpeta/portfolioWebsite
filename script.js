@@ -3,14 +3,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const intro = document.querySelector('.intro');
     const hasVisited = localStorage.getItem("visited");
 
-    // Set the text content
-    if (hasVisited) {
-        introText.textContent = "Home."; 
-    } else {
-        introText.textContent = "Hello."; 
-        localStorage.setItem("visited", "true"); 
-    }
-
     // Show the text
     setTimeout(() => {
         introText.classList.add("active");
