@@ -18,3 +18,14 @@ window.addEventListener("DOMContentLoaded", () => {
         }, 1000);
     }, 1500);
 });
+
+function sendMail(){
+    let parms = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        subject : document.getElementById("subject").value,
+        message : document.getElementById("message").value,
+    }
+
+    emailjs.send("service_ujrwn0h","template_4tztg1n",parms).then (alert("Email Sent!"))
+}
