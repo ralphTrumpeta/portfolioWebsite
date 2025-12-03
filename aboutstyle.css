@@ -150,13 +150,15 @@ ul.links {
 .about-image {
     float: left;
     width: 40%;
-    padding: 100px;
+    padding-top: 250px;
+    padding-left: 150px;
 }
 
 .about-image img {
     width: 100%;
     height: auto;
-    padding-left: 55px;
+    border-radius: 50px 50px;
+    margin: auto;
 }
 
 .about-content-section {
@@ -188,13 +190,15 @@ ul.links {
 .about-education-image {
     float: right;
     width: 40%;
-    padding: 100px;
+    padding-top: 250px;
+    padding-right: 150px;
 }
 
 .about-education-image img {
     width: 100%;
     height: auto;
-    padding-right: 55px;
+    border-radius: 50px 50px;
+    margin: auto;
 }
 
 .about-education-content-section {
