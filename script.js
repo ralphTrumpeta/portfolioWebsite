@@ -3,20 +3,47 @@ window.addEventListener("DOMContentLoaded", () => {
     const intro = document.querySelector('.intro');
     const hasVisited = localStorage.getItem("visited");
 
-    // Show the text
+
     setTimeout(() => {
         introText.classList.add("active");
     }, 300);
 
-    // Hide the entire intro section
     setTimeout(() => {
         intro.style.opacity = "0";
-        intro.style.transition = "opacity 1s ease"; // Ensure smooth fade
+        intro.style.transition = "opacity 1s ease";
 
         setTimeout(() => {
             intro.style.display = "none";
         }, 1000);
     }, 1500);
+});
+
+const overlay = document.getElementById("projectOverlay");
+const overlayImage = document.getElementById("overlayImage");
+const overlayTitle = document.getElementById("overlayTitle");
+const overlayDescription = document.getElementById("overlayDescription");
+const closeBtn = document.getElementById("closeOverlay");
+
+document.querySelectorAll(".project-frame").forEach(frame => {
+    frame.addEventListener("click", () => {
+
+        overlayImage.src = frame.dataset.image;
+        overlayTitle.textContent = frame.dataset.title;
+        overlayDescription.textContent = frame.dataset.description;
+
+        overlay.style.display = "flex";
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+});
+
+
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.style.display = "none";
+    }
 });
 
 function sendMail(){

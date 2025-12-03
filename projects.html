@@ -1,9 +1,97 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <button class="dot-hover-button">Hover Me</button>
+    <title> Project </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projectstyle.css"> 
+    <script defer src="script.js"></script>  
 </head>
+
 <body>
+    <div class="intro">
+        <h1 class="intro-header">
+            <span class="intro-header-inner" id="intro-text">Project.</span>
+        </h1>
+    </div>
+
+    <div class="project-section">
+        <div class="navbar">
+            <!-- add link for the main/home page (which is this page)-->
+            <ul class="links">
+                <li class="home-topleft-btn">
+                    <a href="home.html">
+                        <span class="btn-text">
+                            <span class="btn-text-inner">@ralphTrumpeta</span>
+                        </span>
+                    </a>
+                </li>
+                <!-- add the link for about here-->
+                <li class="about-btn"> 
+                    <a href="about.html">
+                        <span class="btn-text">
+                            <span class="btn-text-inner">About</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="contact-btn"> 
+                    <!-- add the link for contacts here-->
+                    <a href="contact.html">
+                        <span class="btn-text">
+                            <span class="btn-text-inner">Contact</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="project-btn"> 
+                    <!-- add the link for projects here-->
+                    <a href="projects.html">
+                        <span class="btn-text">
+                            <span class="btn-text-inner">Projects</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- PROJECTS GRID -->
+        <div class="project-container">
+
+            <!-- PROJECT 1 -->
+            <div class="project-frame"
+                data-title="Portfolio"
+                data-description="A portfolio that provides an insight of myself. Created using HTML, CSS, and animations."
+                data-image="assets/project1.png">
+                <div class="project-image">
+                    <img src="assets/project1.png">
+                </div>
+                <h3 class="project-title">Project 1</h3>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-frame"
+                data-title="Project 2"
+                data-description="This is the description for Project 2. You can customize every field."
+                data-image="assets/project2.png">
+                <div class="project-image">
+                    <img src="assets/project2.png">
+                </div>
+                <h3 class="project-title">Project 2</h3>
+            </div>
+
+        </div>
+    </div>
+
+    <!--PROJECT DETAIL OVERLAY-->
+    <div class="project-overlay" id="projectOverlay">
+        <div class="overlay-content">
+            <span class="close-btn" id="closeOverlay">&times;</span>
+            <img id="overlayImage">
+            <h2 id="overlayTitle"></h2>
+            <p id="overlayDescription"></p>
+        </div>
+    </div>
 
 </body>
 </html>
