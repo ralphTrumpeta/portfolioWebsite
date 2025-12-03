@@ -8,7 +8,7 @@
 }
 
 html, body {
-    height: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
 }
@@ -76,7 +76,7 @@ body {
 .about-btn a, .contact-btn a, .project-btn a, .home-topleft-btn a {
     display: flex;
     color: #DEDEDE;
-    margin-right: 50px; 
+    margin: 0;
     margin-left: auto;
     position: relative;
     padding: 14px 10px;
@@ -107,20 +107,24 @@ body {
     transform: translateX(-50%) scale(1);
 }
 
-/* Moves items to the right */
+.about-btn a.active::after, .contact-btn a.active::after, .project-btn a.active::after, .home-topleft-btn a.active::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
 ul.links {
     list-style-type: none;
     margin: 10px;
     padding: 10px;
     display: flex;
-    justify-content: flex-end; 
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* Home button stays on the left */
 .home-topleft-btn {
     margin-right: auto; 
-    margin-left: 50px;
 }
 
 /* PROJECT */
@@ -309,31 +313,147 @@ ul.links {
 
 @media (max-width: 1200px) {
 
-    .home-container {
-        left: 120px;
-        width: 500px;
+    .project-title .project-title-inner {
+        font-size: 54px;
     }
 
-    .hello-message {
-        font-size: 70px;
+    .project-image img {
+        width: 80%;
+        height: 200px;
     }
 
-    .box-outline-img {
-        right: 120px;
-        width: 350px;
-        height: auto;
+    .overlay-content {
+        max-width: 600px;
+        padding: 20px;
     }
 
-    .about-image {
-        padding: 70px;
-        width: 45%;
-    }
-
-    .about-content-section {
-        padding: 70px;
-        width: 55%;
+    .overlay-content p {
+        font-size: 16px;
     }
 }
+
+@media (max-width: 992px) {
+
+    ul.links {
+        gap: 10px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .project-title .project-title-inner {
+        font-size: 46px;
+    }
+
+    .project-container {
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .project-image img {
+        width: 85%;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .project-title .project-title-inner {
+        font-size: 34px;
+    }
+
+    .project-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .project-image img {
+        width: 90%;
+        height: 160px;
+    }
+
+    .project-overlay {
+        padding: 20px;
+    }
+
+    .overlay-content {
+        max-width: 95%;
+        padding: 20px 15px;
+    }
+
+    .overlay-content h2 {
+        font-size: 24px;
+    }
+
+    .overlay-content p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .close-btn {
+        font-size: 34px;
+        top: 15px;
+        right: 20px;
+    }
+
+    .custom-footer {
+        flex-direction: column;
+        height: auto;
+        padding: 25px;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-contact {
+        justify-content: center;
+    }
+
+    .socials-container {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .project-title .project-title-inner {
+        font-size: 28px;
+    }
+
+    .project-container {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .project-image img {
+        width: 95%;
+        height: 150px;
+    }
+
+    .overlay-content {
+        padding: 15px;
+    }
+
+    .overlay-content h2 {
+        font-size: 22px;
+    }
+
+    .overlay-content p {
+        font-size: 14px;
+    }
+
+    .close-btn {
+        font-size: 32px;
+        right: 18px;
+    }
+
+    .social-icon img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
 
 /* ANIMATIONS */
 @keyframes fadeIn {

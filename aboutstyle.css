@@ -8,7 +8,7 @@
 }
 
 html, body {
-    height: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
 }
@@ -76,7 +76,7 @@ body {
 .about-btn a, .contact-btn a, .project-btn a, .home-topleft-btn a {
     display: flex;
     color: #DEDEDE;
-    margin-right: 50px; 
+    margin: 0;
     margin-left: auto;
     position: relative;
     padding: 14px 10px;
@@ -107,20 +107,24 @@ body {
     transform: translateX(-50%) scale(1);
 }
 
-/* Moves items to the right */
+.about-btn a.active::after, .contact-btn a.active::after, .project-btn a.active::after, .home-topleft-btn a.active::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
 ul.links {
     list-style-type: none;
     margin: 10px;
     padding: 10px;
     display: flex;
-    justify-content: flex-end; 
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* Home button stays on the left */
 .home-topleft-btn {
     margin-right: auto; 
-    margin-left: 50px;
 }
 
 /* ABOUT SECTION */
@@ -241,11 +245,13 @@ ul.links {
 /* offerings */
 .about-row { 
     margin-bottom: 2em; 
+    overflow-x: hidden;
 } 
 
 .about-row-inner { 
     width: 30%;
     padding-left: 130px;
+    padding-left: 30px;
     position: relative;
     display: inline-block;
     font-weight: 600;
@@ -353,4 +359,149 @@ ul.links {
 
 .social-icon img:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 1200px) {
+
+    .about-image,
+    .about-education-image {
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 150px;
+        width: 45%;
+    }
+
+    .about-content-section,
+    .about-education-content-section {
+        padding: 60px;
+        width: 55%;
+    }
+
+    .about-title-inner {
+        font-size: 48px !important;
+    }
+
+    .content p,
+    .education-section {
+        padding-right: 40px;
+        line-height: 30px;
+        letter-spacing: normal;
+    }
+
+    .about-row-inner {
+        width: 45%;
+        padding-left: 80px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    ul.links {
+        gap: 10px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .about-image,
+    .about-education-image,
+    .about-content-section,
+    .about-education-content-section {
+        padding: 40px;
+    }
+
+    .about-image img,
+    .about-education-image img {
+        border-radius: 30px;
+    }
+
+    .about-title-inner {
+        font-size: 40px !important;
+    }
+
+    .about-row-inner {
+        width: 100%;
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .about-image,
+    .about-education-image,
+    .about-content-section,
+    .about-education-content-section {
+        float: none;
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .about-image img,
+    .about-education-image img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .about-title-inner {
+        font-size: 32px !important;
+    }
+
+    .content p,
+    .education-section {
+        padding-right: 0;
+        text-align: center;
+        line-height: 28px;
+    }
+
+    .about-row-inner {
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .custom-footer {
+        flex-direction: column;
+        height: auto;
+        padding: 25px;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-contact {
+        justify-content: center;
+    }
+
+    .socials-container {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .about-title-inner {
+        font-size: 26px !important;
+    }
+
+    .home-topleft-btn {
+        margin-left: 20px;
+    }
+
+    .about-image img,
+    .about-education-image img {
+        width: 90%;
+    }
+
+    .contact-footer-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .social-icon img {
+        width: 32px;
+        height: 32px;
+    }
 }
