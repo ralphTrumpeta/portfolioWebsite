@@ -326,6 +326,12 @@ input:focus, textarea:focus {
     gap: 40px;
 }
 
+.socials a {
+    pointer-events: auto;
+    position: relative;
+    z-index: 5;
+}
+
 .social-icon img {
     width: 40px;
     height: 40px;

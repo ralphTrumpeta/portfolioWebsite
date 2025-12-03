@@ -127,17 +127,29 @@ ul.links {
 
 .project-section {
     width: 100%;
-    min-height: 160vh;
+    min-height: 110vh;
     background-image: url("assets/homeBG.png");
     background-size: cover;
     background-position: center;
 }
 
 .project-container {
-    display: grid;
+    display: block;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     padding: 40px;
+}
+
+.project-title {
+    padding-top: auto;
+    padding-bottom: 50px;
+}
+
+.project-title .project-title-inner {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 600;
 }
 
 .project-frame {
@@ -145,12 +157,13 @@ ul.links {
     text-align: center;
     transition: transform 0.3s ease;
 }
+
 .project-frame:hover {
     transform: translateY(-10px) scale(1.03);
 }
 
 .project-image img {
-    width: 100%;
+    width: 75%;
     height: 220px;
     object-fit: cover;
     border-radius: 12px;
@@ -179,6 +192,7 @@ ul.links {
     text-align: center;
     animation: popIn 0.3s ease forwards;
 }
+
 
 .overlay-content img {
     width: 100%;
@@ -274,6 +288,12 @@ ul.links {
 .socials {
     display: flex;
     gap: 40px;
+}
+
+.socials a {
+    pointer-events: auto;
+    position: relative;
+    z-index: 5;
 }
 
 .social-icon img {
